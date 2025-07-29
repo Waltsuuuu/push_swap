@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 14:07:25 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/29 20:36:12 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/29 21:37:33 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	check_input_and_parse(int argc, char *argv[], t_stack *stack_a)
 {
 	char	**input_values;
 	int		total_stack_size;
+	int		i;
 	
 	input_values = NULL;
 	if (argc < 2)
@@ -29,12 +30,28 @@ void	check_input_and_parse(int argc, char *argv[], t_stack *stack_a)
 	{
 		input_values = validate_and_split_input(argv[1], input_values, stack_a);
 		total_stack_size = count_split_values(input_values);
-		populate_stack(total_stack_size, input_values, stack_a);
+		populate_stack(total_stack_size, input_values, stack_a, argc);
 	}
-	// if (argc > 2)
-		//loop through each arg and make sure its valid int.
-		//convert and store the input (str to int)
-		//check for duplicates
+	if (argc > 2)
+	{
+		input_values = malloc(sizeof(char *) * argc);
+		if (!input_values)
+			print_error_and_exit(stack_a);
+		i = 1;
+		while (i < argc)
+		{
+			if (is_valid_int(argv[i]) == FALSE)
+			{
+				free(input_values);
+				print_error_and_exit(stack_a);
+			}
+			input_values[i - 1] = argv[i];
+			i++;
+		}
+		input_values[i - 1] = NULL;
+		total_stack_size = argc - 1;
+		populate_stack(total_stack_size, input_values, stack_a, argc);
+	}
 }
 
 int	count_split_values(char **values)
@@ -47,7 +64,7 @@ int	count_split_values(char **values)
 	return (i);
 }
 
-void	populate_stack(int total_stack_size, char **input_values, t_stack *stack_a)
+void	populate_stack(int total_stack_size, char **input_values, t_stack *stack_a, int argc)
 {
 	int	i;
 	
@@ -62,7 +79,8 @@ void	populate_stack(int total_stack_size, char **input_values, t_stack *stack_a)
 	while (i < total_stack_size)
 	{
 		stack_a->arr[i] = ft_atoi(input_values[i]);
-		free(input_values[i]);
+		if (argc == 2)
+			free(input_values[i]);
 		i++;
 	}
 	free(input_values);

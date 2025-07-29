@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:23:42 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/29 20:35:19 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/29 22:06:22 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,28 @@ char	**validate_and_split_input(char *argv, char **input_values, t_stack *stack_
 		}
 		i++;
 	}
+	return (input_values);
+}
+
+char	**validate_and_fill_values(int argc, char *argv[], char **input_values, t_stack *stack_a)
+{
+	int	i;
+	
+	input_values = malloc(sizeof(char *) * argc);
+	if (!input_values)
+			print_error_and_exit(stack_a);
+	i = 1;
+	while (i < argc)
+	{
+		if (is_valid_int(argv[i]) == FALSE)
+		{
+			free(input_values);
+			print_error_and_exit(stack_a);
+		}
+		input_values[i - 1] = argv[i];
+		i++;
+	}
+	input_values[i - 1] = NULL;
 	return (input_values);
 }
 

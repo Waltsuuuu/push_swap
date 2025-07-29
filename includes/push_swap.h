@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:37:51 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/29 22:04:41 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/29 22:18:20 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	check_input_and_parse(int argc, char *argv[], t_stack *stack);
 int		count_split_values(char **values);
 void	populate_stack(int total_stack_size, char **input_values, t_stack *stack_a, int argc);
 char	**validate_and_fill_values(int argc, char *argv[], char **input_values, t_stack *stack_a);
+int		has_duplicates(t_stack *stack_a);
+
 /* parse_input.c */
 char	**validate_and_split_input(char *argv, char **input_values, t_stack *stack_a);
 int		is_valid_int(char *value_str);

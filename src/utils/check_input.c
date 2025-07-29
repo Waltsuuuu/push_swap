@@ -6,22 +6,17 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 14:07:25 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/29 22:06:04 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/29 22:20:38 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h> //ONLY FOR TESTING
 
-// if argc < 2, error
-// if argc == 2, require split
-// if argc > 2, no split
-
 void	check_input_and_parse(int argc, char *argv[], t_stack *stack_a)
 {
 	char	**input_values;
 	int		total_stack_size;
-	// int		i;
 	
 	input_values = NULL;
 	if (argc < 2)
@@ -37,6 +32,28 @@ void	check_input_and_parse(int argc, char *argv[], t_stack *stack_a)
 		total_stack_size = argc - 1;
 	}
 	populate_stack(total_stack_size, input_values, stack_a, argc);
+	if (has_duplicates(stack_a) == TRUE)
+		print_error_and_exit(stack_a);
+}
+
+int	has_duplicates(t_stack *stack_a)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < stack_a->current_size -1)
+	{
+		j = i + 1;
+		while (j < stack_a->current_size)
+		{
+			if (stack_a->arr[i] == stack_a->arr[j])
+				return (TRUE);
+			j++;
+		}
+		i++;
+	}
+	return (FALSE);
 }
 
 int	count_split_values(char **values)
@@ -54,6 +71,7 @@ void	populate_stack(int total_stack_size, char **input_values, t_stack *stack_a,
 	int	i;
 	
 	stack_a->max_size = total_stack_size;
+	stack_a->current_size = total_stack_size;
 	stack_a->arr = malloc(sizeof(int) * total_stack_size);;
 	if (!stack_a->arr)
 	{
@@ -70,5 +88,4 @@ void	populate_stack(int total_stack_size, char **input_values, t_stack *stack_a,
 	}
 	free(input_values);
 	input_values = NULL;
-	stack_a->current_size = total_stack_size;
 }

@@ -6,27 +6,32 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:23:42 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/29 18:41:51 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/29 20:35:19 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**validate_and_split_input(int argc, char *argv, char **input_values)
+char	**validate_and_split_input(char *argv, char **input_values, t_stack *stack_a)
 {
 	int		i;
 
-	(void)argc;
 	input_values = ft_split(argv, ' ');
 	if (!input_values)
-		print_error_and_exit();
+		print_error_and_exit(NULL);
 	i = 0;
 	while (input_values[i] != NULL)
 	{
 		if (is_valid_int(input_values[i]) == FALSE)
 		{
+			i = 0;
+			while (input_values[i] != NULL)
+			{
+				free(input_values[i]);
+				i++;
+			}
 			free(input_values);
-			print_error_and_exit();
+			print_error_and_exit(stack_a);
 		}
 		i++;
 	}

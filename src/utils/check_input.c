@@ -6,29 +6,30 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 14:07:25 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/29 18:47:17 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/29 20:36:12 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h> //ONLY FOR TESTING
 
-
 // if argc < 2, error
 // if argc == 2, require split
 // if argc > 2, no split
 
-void	check_input_and_parse(int argc, char *argv[])
+void	check_input_and_parse(int argc, char *argv[], t_stack *stack_a)
 {
 	char	**input_values;
 	int		total_stack_size;
+	
 	input_values = NULL;
 	if (argc < 2)
-		print_error_and_exit();
+		exit(EXIT_FAILURE);
 	if (argc == 2)
 	{
-		input_values = validate_and_split_input(argc, argv[1], input_values);
+		input_values = validate_and_split_input(argv[1], input_values, stack_a);
 		total_stack_size = count_split_values(input_values);
+		populate_stack(total_stack_size, input_values, stack_a);
 	}
 	// if (argc > 2)
 		//loop through each arg and make sure its valid int.
@@ -44,4 +45,27 @@ int	count_split_values(char **values)
 	while (values[i] != NULL)
 		i++;
 	return (i);
+}
+
+void	populate_stack(int total_stack_size, char **input_values, t_stack *stack_a)
+{
+	int	i;
+	
+	stack_a->max_size = total_stack_size;
+	stack_a->arr = malloc(sizeof(int) * total_stack_size);;
+	if (!stack_a->arr)
+	{
+		free(input_values);
+		print_error_and_exit(stack_a);
+	}
+	i = 0;
+	while (i < total_stack_size)
+	{
+		stack_a->arr[i] = ft_atoi(input_values[i]);
+		free(input_values[i]);
+		i++;
+	}
+	free(input_values);
+	input_values = NULL;
+	stack_a->current_size = total_stack_size;
 }

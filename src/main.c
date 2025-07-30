@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:43:08 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 16:26:22 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/30 16:42:39 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char *argv[])
 		printf("arr[%d] = %d\n", i, stack_a.arr[i]);
 		i++;
 	}
-	rotate_a(&stack_a);
+	rotate_rotate(&stack_a, &stack_b);
 	i = 0;
 	printf("After\n");
 	while (i < stack_a.current_size)

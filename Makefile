@@ -11,6 +11,7 @@ SRCS =	src/main.c \
 		src/utils/is_sorted.c \
 		src/validate_and_parse/check_input.c \
 		src/validate_and_parse/parse_input.c \
+		src/operations/swap.c \
 
 # === LIBFT ===
 LIBFT_DIR = libft

@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:37:51 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 14:22:30 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/30 15:12:18 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ void	print_error_and_exit(t_stack *stack_a, t_stack *stack_b);
 void	clean_and_exit(t_stack *stack_a, t_stack *stack_b);
 void	free_stacks(t_stack *stack_a, t_stack *stack_b);
 
+/* is_sorted.c */
+int		is_sorted(t_stack *stack);
+
+/* VALIDATE AND PARSE */
 /* check_input.c */
 void	check_input_and_parse(int argc, char *argv[],
 			t_stack *stack, t_stack *stack_b);
@@ -49,7 +53,10 @@ char	**validate_and_split_input(char *argv, char **input_values,
 			t_stack *stack_a);
 int		is_valid_int(char *value_str);
 
-/* is_sorted.c */
-int		is_sorted(t_stack *stack);
+/* OPERATIONS */
+/* swap.c */
+void	swap_a(t_stack *stack_a);
+void	swap_b(t_stack *stack_b);
+void	swap_swap(t_stack *stack_a, t_stack *stack_b);
 
 #endif

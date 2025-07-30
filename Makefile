@@ -7,9 +7,10 @@ NAME = push_swap
 
 # === PUSH_SWAP ===
 SRCS =	src/main.c \
-		src/utils/error.c \
+		src/utils/exit.c \
 		src/utils/check_input.c \
 		src/utils/parse_input.c \
+		src/utils/is_sorted.c \
 
 # === LIBFT ===
 LIBFT_DIR = libft

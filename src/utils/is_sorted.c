@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 13:43:08 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 14:23:34 by wheino           ###   ########.fr       */
+/*   Created: 2025/07/30 13:18:39 by wheino            #+#    #+#             */
+/*   Updated: 2025/07/30 14:18:21 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> //TESTING ONLY
+#include <stdio.h> //TEST
 
-int	main(int argc, char *argv[])
+int	is_sorted(t_stack *stack)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	int	i;
+	int	j;
 
-	ft_memset(&stack_a, 0, sizeof(t_stack));
-	ft_memset(&stack_b, 0, sizeof(t_stack));
-	check_input_and_parse(argc, argv, &stack_a, &stack_b);
-	if (is_sorted(&stack_a) == TRUE)
-		clean_and_exit(&stack_a, &stack_b);
-	clean_and_exit(&stack_a, &stack_b);
+	i = 0;
+	while (i < stack->current_size)
+	{
+		j = i + 1;
+		while (j < stack->current_size)
+		{
+			if (stack->arr[i] > stack->arr[j])
+				return (FALSE);
+			j++;
+		}
+		i++;
+	}
+	return (TRUE);
 }

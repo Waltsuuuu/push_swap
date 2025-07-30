@@ -6,18 +6,19 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 14:07:25 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/29 22:20:38 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/30 14:19:52 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h> //ONLY FOR TESTING
 
-void	check_input_and_parse(int argc, char *argv[], t_stack *stack_a)
+void	check_input_and_parse(int argc, char *argv[],
+			t_stack *stack_a, t_stack *stack_b)
 {
 	char	**input_values;
 	int		total_stack_size;
-	
+
 	input_values = NULL;
 	if (argc < 2)
 		exit(EXIT_FAILURE);
@@ -28,12 +29,17 @@ void	check_input_and_parse(int argc, char *argv[], t_stack *stack_a)
 	}
 	if (argc > 2)
 	{
-		input_values = validate_and_fill_values(argc, argv, input_values, stack_a);
+		input_values = validate_and_fill_values(argc, argv,
+				input_values, stack_a);
 		total_stack_size = argc - 1;
 	}
 	populate_stack(total_stack_size, input_values, stack_a, argc);
 	if (has_duplicates(stack_a) == TRUE)
-		print_error_and_exit(stack_a);
+		print_error_and_exit(stack_a, stack_b);
+	stack_b->max_size = total_stack_size;
+	stack_b->arr = malloc(sizeof(int) * total_stack_size);
+	if (!stack_b->arr)
+		print_error_and_exit(stack_a, stack_b);
 }
 
 int	has_duplicates(t_stack *stack_a)
@@ -66,17 +72,18 @@ int	count_split_values(char **values)
 	return (i);
 }
 
-void	populate_stack(int total_stack_size, char **input_values, t_stack *stack_a, int argc)
+void	populate_stack(int total_stack_size, char **input_values,
+		t_stack *stack_a, int argc)
 {
 	int	i;
-	
+
 	stack_a->max_size = total_stack_size;
 	stack_a->current_size = total_stack_size;
-	stack_a->arr = malloc(sizeof(int) * total_stack_size);;
+	stack_a->arr = malloc(sizeof(int) * total_stack_size);
 	if (!stack_a->arr)
 	{
 		free(input_values);
-		print_error_and_exit(stack_a);
+		print_error_and_exit(stack_a, NULL);
 	}
 	i = 0;
 	while (i < total_stack_size)

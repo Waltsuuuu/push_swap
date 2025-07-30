@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 13:18:39 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 15:22:29 by wheino           ###   ########.fr       */
+/*   Created: 2025/07/30 15:19:44 by wheino            #+#    #+#             */
+/*   Updated: 2025/07/30 16:27:29 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-int	is_sorted(t_stack *stack)
+void	rotate_a(t_stack *stack_a)
 {
+	int	temp;
 	int	i;
-	int	j;
 
+	if (stack_a->current_size < 2)
+		return ;
 	i = 0;
-	while (i < stack->current_size)
+	temp = stack_a->arr[i];
+	while (i + 1 < stack_a->current_size)
 	{
-		j = i + 1;
-		while (j < stack->current_size)
-		{
-			if (stack->arr[i] > stack->arr[j])
-				return (FALSE);
-			j++;
-		}
+		stack_a->arr[i] = stack_a->arr[i + 1];
 		i++;
 	}
-	return (TRUE);
+	stack_a->arr[i] = temp;
+	write(1, "ra\n", 3);
 }

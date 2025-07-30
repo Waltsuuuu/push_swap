@@ -6,12 +6,11 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 14:07:25 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 14:19:52 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/30 15:22:10 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> //ONLY FOR TESTING
 
 void	check_input_and_parse(int argc, char *argv[],
 			t_stack *stack_a, t_stack *stack_b)

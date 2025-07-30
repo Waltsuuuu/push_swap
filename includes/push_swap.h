@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:37:51 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 16:11:41 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/30 16:29:00 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void	swap_swap(t_stack *stack_a, t_stack *stack_b);
 
 /* roatate.c */
 void	rotate_a(t_stack *stack_a);
+void	rotate_b(t_stack *stack_b);
 
 #endif

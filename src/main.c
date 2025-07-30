@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:43:08 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 17:39:00 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/30 23:54:58 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,23 @@ int	main(int argc, char *argv[])
 	check_input_and_parse(argc, argv, &stack_a, &stack_b);
 	if (is_sorted(&stack_a) == TRUE)
 		clean_and_exit(&stack_a, &stack_b);
-	int i = 0;
-	printf("Before\n");
-	while (i < stack_a.current_size)
-	{
-		printf("arr[%d] = %d\n", i, stack_a.arr[i]);
-		i++;
-	}
-	rev_rotate_rotate(&stack_a, &stack_b);
-	i = 0;
-	printf("After\n");
-	while (i < stack_a.current_size)
-	{
-		printf("arr[%d] = %d\n", i, stack_a.arr[i]);
-		i++;
-	}
+	normalize(&stack_a, &stack_b);
 	clean_and_exit(&stack_a, &stack_b);
 }
+
+// int i = 0;
+// printf("Before\n");
+// while (i < stack_a.current_size)
+// {
+// 	printf("arr[%d] = %d\n", i, stack_a.arr[i]);
+// 	i++;
+// }
+// push_b(&stack_a, &stack_b);
+// push_b(&stack_a, &stack_b);
+// i = 0;
+// printf("After\n");
+// while (i < stack_a.current_size)
+// {
+// 	printf("arr[%d] = %d\n", i, stack_a.arr[i]);
+// 	i++;
+// }

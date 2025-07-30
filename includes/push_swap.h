@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:37:51 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 17:33:23 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/30 23:53:28 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,15 @@ void	rotate_rotate(t_stack *stack_a, t_stack *stack_b);
 void	rev_rotate_a(t_stack *stack_a);
 void	rev_rotate_b(t_stack *stack_b);
 void	rev_rotate_rotate(t_stack *stack_a, t_stack *stack_b);
+
+/* push.c */
+void	push_a(t_stack *stack_a, t_stack *stack_b);
+void	push_b(t_stack *stack_a, t_stack *stack_b);
+
+/* NORMALIZE */
+/* normalize.c */
+void	normalize(t_stack *stack_a, t_stack *stack_b);
+void	bubble_sort_arr(int *arr, int size);
+void	convert_val_to_index(t_stack *stack_a, int *arr);
 
 #endif

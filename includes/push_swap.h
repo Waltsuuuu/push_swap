@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:37:51 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 23:53:28 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/31 16:16:54 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,9 @@ void	push_b(t_stack *stack_a, t_stack *stack_b);
 void	normalize(t_stack *stack_a, t_stack *stack_b);
 void	bubble_sort_arr(int *arr, int size);
 void	convert_val_to_index(t_stack *stack_a, int *arr);
+
+/* RADIX SORT */
+void	radix_sort(t_stack *stack_a, t_stack *stack_b);
+int	find_max_bit(t_stack *stack_a);
 
 #endif

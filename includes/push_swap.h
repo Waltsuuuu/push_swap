@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:37:51 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/31 19:53:13 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/31 20:37:22 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ int		find_max_bit(t_stack *stack_a);
 void	small_sort(t_stack *stack_a, t_stack *stack_b);
 void	sort_2(t_stack *stack_a);
 void	sort_3(t_stack *stack_a);
+void	sort_4_5(t_stack *stack_a, t_stack *stack_b);
 
 #endif

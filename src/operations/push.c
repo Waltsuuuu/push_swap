@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 21:36:45 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 23:54:47 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/31 16:25:17 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	push_a(t_stack *stack_a, t_stack *stack_b)
 	}
 	stack_b->current_size -= 1;
 	stack_a->current_size += 1;
+	write(1, "pa\n", 3);
 }
 
 void	push_b(t_stack *stack_a, t_stack *stack_b)
@@ -56,4 +57,5 @@ void	push_b(t_stack *stack_a, t_stack *stack_b)
 	}
 	stack_a->current_size -= 1;
 	stack_b->current_size += 1;
+	write(1, "pb\n", 3);
 }

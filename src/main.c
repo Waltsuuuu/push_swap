@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:43:08 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/31 16:23:41 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/31 17:21:48 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ int	main(int argc, char *argv[])
 		printf("arr[%d] = %d\n", i, stack_a.arr[i]);
 		i++;
 	}
-	radix_sort(&stack_a, &stack_b);
+	if (stack_a.max_size <= 5)
+		small_sort(&stack_a, &stack_b);
+	else
+		radix_sort(&stack_a, &stack_b);
 	i = 0;
 	printf("After\n");
 	while (i < stack_a.current_size)
@@ -41,20 +44,3 @@ int	main(int argc, char *argv[])
 	}
 	clean_and_exit(&stack_a, &stack_b);
 }
-
-// int i = 0;
-// printf("Before\n");
-// while (i < stack_a.current_size)
-// {
-// 	printf("arr[%d] = %d\n", i, stack_a.arr[i]);
-// 	i++;
-// }
-// push_b(&stack_a, &stack_b);
-// push_b(&stack_a, &stack_b);
-// i = 0;
-// printf("After\n");
-// while (i < stack_a.current_size)
-// {
-// 	printf("arr[%d] = %d\n", i, stack_a.arr[i]);
-// 	i++;
-// }

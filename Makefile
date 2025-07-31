@@ -17,6 +17,7 @@ SRCS =	src/main.c \
 		src/operations/rev_rotate.c \
 		src/normalization/normalize.c \
 		src/radix_sort/radix.c \
+		src/small_input_sort/small_sort.c \
 
 # === LIBFT ===
 LIBFT_DIR = libft

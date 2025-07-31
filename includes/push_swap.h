@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:37:51 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/31 16:16:54 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/31 19:53:13 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,12 @@ void	convert_val_to_index(t_stack *stack_a, int *arr);
 
 /* RADIX SORT */
 void	radix_sort(t_stack *stack_a, t_stack *stack_b);
-int	find_max_bit(t_stack *stack_a);
+int		find_max_bit(t_stack *stack_a);
+
+/* SMALL INPUT SORT */
+/* small_sort.c */
+void	small_sort(t_stack *stack_a, t_stack *stack_b);
+void	sort_2(t_stack *stack_a);
+void	sort_3(t_stack *stack_a);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 15:19:44 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 16:42:23 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/31 16:21:39 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	rotate_a(t_stack *stack_a)
 	while (i + 1 < stack_a->current_size)
 	{
 		stack_a->arr[i] = stack_a->arr[i + 1];
+		i++;
 	}
 	stack_a->arr[i] = temp;
 	write(1, "ra\n", 3);

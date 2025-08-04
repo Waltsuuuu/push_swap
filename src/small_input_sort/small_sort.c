@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 17:19:07 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/31 20:37:15 by wheino           ###   ########.fr       */
+/*   Updated: 2025/07/31 20:47:24 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	sort_4_5(t_stack *stack_a, t_stack *stack_b)
 		values_pushed_to_b++;
 		next_smallest_to_push++;
 	}
-
 	sort_3(stack_a);
 	if (values_pushed_to_b == 2 &&
 			stack_b->arr[0] < stack_b->arr[1])

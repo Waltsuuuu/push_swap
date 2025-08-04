@@ -6,12 +6,11 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:00:35 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/31 16:22:45 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/04 12:51:31 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 {
@@ -21,10 +20,10 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 	
 	bit_index = 0;
 	max_bit = find_max_bit(stack_a);
-	while (bit_index < max_bit) // Loop through each bit (LSB to MSB)
+	while (bit_index < max_bit) 
 	{
 		i = 0;
-		while (i < stack_a->max_size) //Check bit and push to B if the bit == 0, else rotate_a.
+		while (i < stack_a->max_size)
 		{
 			if (((stack_a->arr[0] >> bit_index) & 1) == 0)
 			{
@@ -36,12 +35,12 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 			}
 			i++;
 		}
-		while (stack_b->current_size != 0) //Push everything back to A.
+		while (stack_b->current_size != 0)
 			push_a(stack_a, stack_b);
 		bit_index++;
 	}
 }
-/* Finds the number of bits needed to represent the largest index number in the stack */
+
 int	find_max_bit(t_stack *stack_a)
 {
 	int	largest_index;

@@ -6,12 +6,11 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 22:46:09 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 23:55:10 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/04 12:51:42 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> //TESTING ONLY
 
 void	normalize(t_stack *stack_a, t_stack *stack_b)
 {
@@ -72,5 +71,3 @@ void	bubble_sort_arr(int *arr, int size)
 		i++;
 	}
 }
-
-//remember to free the copied arr

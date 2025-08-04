@@ -6,12 +6,11 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 15:19:44 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/31 16:21:39 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/04 12:51:08 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	rotate_a(t_stack *stack_a)
 {

@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:00:35 by wheino            #+#    #+#             */
-/*   Updated: 2025/08/04 12:51:31 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/04 16:59:19 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b)
 	int	max_bit;
 	int	bit_index;
 	int	i;
-	
+
 	bit_index = 0;
 	max_bit = find_max_bit(stack_a);
-	while (bit_index < max_bit) 
+	while (bit_index < max_bit)
 	{
 		i = 0;
 		while (i < stack_a->max_size)

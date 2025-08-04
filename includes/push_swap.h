@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:37:51 by wheino            #+#    #+#             */
-/*   Updated: 2025/08/04 16:15:00 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/04 17:02:10 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_stack
 	int	*arr;
 }			t_stack;
 
-/* UTILS */
+/* ### UTILS ### */
 /* exit.c */
 void	print_error_and_exit(t_stack *stack_a, t_stack *stack_b);
 void	clean_and_exit(t_stack *stack_a, t_stack *stack_b);
@@ -37,7 +37,7 @@ void	free_stacks(t_stack *stack_a, t_stack *stack_b);
 /* is_sorted.c */
 int		is_sorted(t_stack *stack);
 
-/* VALIDATE AND PARSE */
+/* ### VALIDATE AND PARSE ### */
 /* check_input.c */
 void	check_input_and_parse(int argc, char *argv[],
 			t_stack *stack, t_stack *stack_b);
@@ -53,7 +53,7 @@ char	**validate_and_split_input(char *argv, char **input_values,
 			t_stack *stack_a);
 int		is_valid_int(char *value_str);
 
-/* OPERATIONS */
+/* ### OPERATIONS ### */
 /* swap.c */
 void	swap_a(t_stack *stack_a);
 void	swap_b(t_stack *stack_b);
@@ -73,24 +73,25 @@ void	rev_rotate_rotate(t_stack *stack_a, t_stack *stack_b);
 void	push_a(t_stack *stack_a, t_stack *stack_b);
 void	push_b(t_stack *stack_a, t_stack *stack_b);
 
-/* NORMALIZE */
+/* ### NORMALIZE ### */
 /* normalize.c */
 void	normalize(t_stack *stack_a, t_stack *stack_b);
 void	bubble_sort_arr(int *arr, int size);
 void	convert_val_to_index(t_stack *stack_a, int *arr);
 
-/* RADIX SORT */
+/* -- RADIX SORT -- */
 void	radix_sort(t_stack *stack_a, t_stack *stack_b);
 int		find_max_bit(t_stack *stack_a);
 
-/* SMALL INPUT SORT */
+/* ### SMALL INPUT SORT ### */
 /* small_sort.c */
 void	small_sort(t_stack *stack_a, t_stack *stack_b);
 void	sort_2(t_stack *stack_a);
 void	sort_3(t_stack *stack_a);
 void	sort_4_5(t_stack *stack_a, t_stack *stack_b);
-void	smallest_to_top(t_stack *stack_a);
-int	find_smallest_index(t_stack *stack_a);
 
+/* small_sort_utils.c */
+void	smallest_to_top(t_stack *stack_a);
+int		find_smallest_index(t_stack *stack_a);
 
 #endif

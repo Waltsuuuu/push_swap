@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 14:07:25 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 15:22:10 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/04 13:05:03 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,11 @@ void	populate_stack(int total_stack_size, char **input_values,
 {
 	int	i;
 
+	if (total_stack_size == 0)
+	{
+		free(input_values);
+		print_error_and_exit(stack_a, NULL);
+	}
 	stack_a->max_size = total_stack_size;
 	stack_a->current_size = total_stack_size;
 	stack_a->arr = malloc(sizeof(int) * total_stack_size);

@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:23:42 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/30 14:20:55 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/04 12:59:30 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	**validate_and_split_input(char *argv, char **input_values,
 {
 	int		i;
 
+	if (argv[0] == '\0')
+		print_error_and_exit(NULL, NULL);
 	input_values = ft_split(argv, ' ');
 	if (!input_values)
 		print_error_and_exit(NULL, NULL);

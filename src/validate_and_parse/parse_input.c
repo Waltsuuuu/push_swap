@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:23:42 by wheino            #+#    #+#             */
-/*   Updated: 2025/08/04 13:38:59 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/04 17:42:36 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	**validate_and_fill_values(int argc, char *argv[],
 	i = 1;
 	while (i < argc)
 	{
-		if (is_valid_int(argv[i]) == FALSE)
+		if (is_valid_int(argv[i]) == FALSE || argv[i][0] == '\0')
 		{
 			free(input_values);
 			print_error_and_exit(stack_a, NULL);

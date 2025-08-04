@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:23:42 by wheino            #+#    #+#             */
-/*   Updated: 2025/08/04 12:59:30 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/04 13:38:59 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ int	is_valid_int(char *value_str)
 	result = 0;
 	if (value_str[i] == '-' || value_str[i] == '+')
 	{
+		if (value_str[i + 1] == '\0' || ft_isdigit(value_str[i + 1]) == FALSE)
+			return (FALSE);
 		if (value_str[i] == '-')
 			neg_sign = YES;
 		i++;
@@ -83,11 +85,9 @@ int	is_valid_int(char *value_str)
 	{
 		if (ft_isdigit(value_str[i]) == FALSE)
 			return (FALSE);
-		result = result * 10 + (value_str[i] - '0');
-		i++;
+		result = result * 10 + (value_str[i++] - '0');
+		if (result > INT_MAX || (result * neg_sign) < INT_MIN)
+			return (FALSE);
 	}
-	result = result * neg_sign;
-	if (result > INT_MAX || result < INT_MIN)
-		return (FALSE);
 	return (TRUE);
 }

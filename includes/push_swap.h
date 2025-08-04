@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 13:37:51 by wheino            #+#    #+#             */
-/*   Updated: 2025/07/31 20:37:22 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/04 16:15:00 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,8 @@ void	small_sort(t_stack *stack_a, t_stack *stack_b);
 void	sort_2(t_stack *stack_a);
 void	sort_3(t_stack *stack_a);
 void	sort_4_5(t_stack *stack_a, t_stack *stack_b);
+void	smallest_to_top(t_stack *stack_a);
+int	find_smallest_index(t_stack *stack_a);
+
 
 #endif

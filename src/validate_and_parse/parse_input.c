@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:23:42 by wheino            #+#    #+#             */
-/*   Updated: 2025/08/04 17:42:36 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/05 15:29:59 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	is_valid_int(char *value_str)
 		if (ft_isdigit(value_str[i]) == FALSE)
 			return (FALSE);
 		result = result * 10 + (value_str[i++] - '0');
-		if (result > INT_MAX || (result * neg_sign) < INT_MIN)
+		if ((result * neg_sign) > INT_MAX || (result * neg_sign) < INT_MIN)
 			return (FALSE);
 	}
 	return (TRUE);

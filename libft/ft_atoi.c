@@ -6,7 +6,7 @@
 /*   By: wheino <wheino@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:40:18 by wheino            #+#    #+#             */
-/*   Updated: 2025/04/30 11:19:30 by wheino           ###   ########.fr       */
+/*   Updated: 2025/08/05 15:47:42 by wheino           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	is_neg;
-	int	result;
+	int		i;
+	int		is_neg;
+	long	result;
 
 	i = 0;
 	is_neg = 0;
